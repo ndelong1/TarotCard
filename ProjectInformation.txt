@@ -1,0 +1,166 @@
+
+"""Tarot Card App
+
+Want to draw one or three cards from a normal Tarot deck
+Cups, Pentacles, Swords, Wands
+
+Takes User DOB to find Zodiac
+
+User input into type of reading:
+    One Card reading
+    Three Card Reading (Past, Present, Future)
+
+Using Pygame 
+
+Basic Tarot Deck includes: Major and Minor Arcana:
+Four Suits: [Listed above] Ace - King (ten, Page, Knight, Queen King)
+0. The Fool- 
+    Upright: New beginnings, new ideas, innocence, and adventure
+    Reversed: Recklesness, fearlessness, and risk   
+1. The Magician-
+    Upright: Willpower, creation, inner strength, and manifestation
+    Reversed: Manipulation and illusions
+2. The High Priestess-
+    Upright: Inner voice, unconscious, divine feminine, and security
+    Reversed: Repressed feelings, withdrawal, and silence
+3. The Empress-
+    Upright: Femininity, nurturing, fertility, abundance, and celebration
+    Reversed: Dependence, smothering, and emptiness
+4. The Emperor-
+    Upright: Authority, structure, a father figure, and change
+    Reversed: Excessive control, rigidity, and domination
+5. The Hierophant-
+    Upright: Spiritual wisdom, tradition, conformity, morality, and ethics
+    Reversed: Rebellion, subversiveness, freedom, and personal beliefs
+6. The Lovers-
+    Upright: Love, harmony, partnerships, and choices
+    Reversed: Disbalance, one-sidedness, and disharmony
+7. The Chariot-
+    Upright: Direction, control, willpower, determination, success, action, and security
+    Reversed: Lack of control, opposition, lack of direction, and self-discipline
+8. Strength-
+    Upright: Strength, courage, compassion, focus, persuasion, and influence
+    Reversed: Self-doubt, weakness, insecurity, low energy, and raw emotion
+9. The Hermit-
+    Upright: Wisdom, soul searching, solitude, spiritual enlightenment, receiving/giving guidance, and intuition
+    Reversed: Loneliness, isolation, paranoia, sadness, being overcome or paralyzed by fear
+10. Wheel of Fortune-
+    Upright: Chance, destiny and fate, karma, turning points, and a resolved conflict
+    Reversed: Upheaval, lousy luck, unwelcome changes, and setbacks
+11. Justice-
+    Upright: Fairness, integrity, legal disputes, cause and effect, and life lessons
+    Reversed: Injustice, dishonesty, failure to take responsibility, deceitful practices, and negative karma
+12. The Hanged Man-
+    Upright: Letting go, sacrificing, pausing to reflect, uncertainty, and spiritual awakening
+    Reversed: Discontentment, stagnation, negativity, no solution, and fear of sacrifice
+13. Death-
+    Upright: Ending of a cycle, transitions, getting rid of excess, powerful movement, resolutions, and intuition
+    Reversed: Resisting change, fear of new beginnings, dependency, and negative patterns
+14. Temperance-
+    Upright: Balance, moderation, good health, cooperating with others, and diligence
+    Reversed: Imbalance, discord, hastiness, overindulgence, and risky behavior
+15. Devil-
+    Upright: Material focus, material possessions, trapped in bondage, addictions, depression, negative thinking, and betrayal
+    Reversed: Overcoming addiction, independence, reclaiming power, detachment, and freedom
+16. The Tower-
+    Upright: Intense and sudden change, release, painful loss, tragedy, and revelation
+    Reversed: Resisting change, avoiding tragedy, a narrow escape, and delaying what is inevitable
+17. The Star-
+    Upright: Hope, renewal, creativity and inspiration, generosity, healing, and change
+    Reversed: Despair, lack of hope, creative block, boredom, and focusing on the negative
+18. The Moon-
+    Upright: Fear, anxiety, confusion, delusion, risk, and grief
+    Reversed: Overcoming fear, emotional stability, finding the truth, conquering anxiety, and gaining clarity
+19. The Sun-
+    Upright: Happiness, fertility, success, optimism, truth, and diligence
+    Reversed: Sadness, procrastination, pessimism, lies, and failure
+20. Judgment-
+    Upright: Reflection, inner calling, reckoning, awakening, rebirth, and absolution
+    Reversed: Feeling down, self-doubt, and missing the call for fearlessness
+21. The World-
+    Upright: Fulfillment, harmony, completion, integration, travel, and unity
+    Reversed: Incompletion, shortcuts, delays, and emptiness
+    
+
+    Ace of Pentacles: New beginnings, prosperity, and abundance
+    Two of Pentacles: Finding balance, multi-tasking, and perseverance
+    Three of Pentacles: Teamwork, focused effort, and mastery
+    Four of Pentacles: Release of the past, giving up control, and acceptance
+    Five of Pentacles: Financial hardship, struggle, and lack of faith
+    Six of Pentacles: Generosity, shared wealth, and prosperity
+    Seven of Pentacles: Planning, perseverance, and long-term success
+    Eight of Pentacles: Ambition, diligence, crafts, and talents
+    Nine of Pentacles: Independence, prosperity, and refinement
+    Ten of Pentacles: Inheritance, affluence, and good family life
+    Page of Pentacles: Sticking to goals, practicality, and loyalty
+    Knight of Pentacles: Consistency, strong will, and improvement
+    Queen of Pentacles: Nurturing healer, self-care, down-to-earth, and gratitude
+    King of Pentacles: Enterprising, abundance, and stability
+
+    
+    Ace of Swords: Clarity, sound decision-making, and a breakthrough
+    Two of Swords: Stalemate, coming to crossroads, and time to think
+    Three of Swords: Heartbreak, sadness, grief, and a new phase
+    Four of Swords: Anxiety, chronic stress, and chaos
+    Five of Swords: Battles, arguments, and conflict
+    Six of Swords: Letting go of hatred, healing, and moving forward
+    Seven of Swords: Dishonesty, deceit, and manipulation
+    Eight of Swords: Feeling stuck, unproductive, and hopeless
+    Nine of Swords: Despair, hopelessness, and anxiety
+    Ten of Swords: Mental breakdown, betrayal, and failure
+    Page of Swords: Youthful, confidence, and fairness
+    Knight of Swords: Bravery, accomplishment, and tenacity
+    Queen of Swords: Supportive, empathetic, and independent
+    King of Swords: Authority, logical, and fatherly
+
+    
+    Ace of Wands: Creativity, enthusiasm, self-reflection, and a fresh start
+    Two of Wands: Decisions, travel, and personal power
+    Three of Wands: Exploration and travel, leadership, and moving forward
+    Four of Wands: Celebration, excitement, and homecoming
+    Five of Wands: Competition, disagreements, rivalry, and challenges
+    Six of Wands: Victory, triumph, and recognition
+    Seven of Wands: Conviction, strong-willed, and determined
+    Eight of Wands: Quick action, receiving news, a new perspective, and exciting times
+    Nine of Wands: Perseverance, stamina, and courage
+    Ten of Wands: Struggling, overextending, and feeling burdened
+    Page of Wands: Outgoing, child-like cheerfulness, and creative confidence
+    Knight of Wands: Charming, self-confident, and passionate
+    Queen of Wands: Passionate, self-assured, and wholehearted
+    King of Wands: Protective, innovative, inspiring, and magnetic
+
+    
+    Ace of Cups: Feeling free, fulfillment, and a new beginning
+    Two of Cups:  Happiness, relationships, and love
+    Three of Cups:  Celebrations, good conversation, and reunions
+    Four of Cups:  Depression, missed opportunities, and feeling stuck
+    Five of Cups: Sadness, loss, and loneliness
+    Six of Cups: Playful, nostalgic, and carefree
+    Seven of Cups: Abundance of options, choices, and opportunities
+    Eight of Cups: Abandonment, travel, and letting go
+    Nine of Cups: Wishes coming true, fulfilled dreams, and prosperity
+    Ten of Cups: Happiness, self-care, family reunions, and harmony
+    Page of Cups: Idealism, youthfulness, and good news
+    Knight of Cups: Romantic proposals, invitations, and following your heart
+    Queen of Cups: Femininity, kindness, and sensitivity
+    King of Cups: Good advice, creativity, and wisdom
+
+
+Home Page - New Reading, Previous Reading, Tarot Information
+    -New Reading- 
+        Starts a reading for the user:
+        Animated 'Start' screen
+        User interactive shuffling/cutting of the cards
+        Cards can be drawn upright or reversed
+        Cards are drawn with the back up and then flipped over.
+        
+    -Previous Reading - 
+        Pulls up the last reading done
+            (Need a way to save the information from the new Reading and pop the older reading)
+        Animaation shows the card and the insight of the card.
+    -Tarot Information - 
+        What is Tarot, How Tarot is used, Facts about Tarot, about the author (Me) and why I got into Tarot reading.
+"""
+
+
+

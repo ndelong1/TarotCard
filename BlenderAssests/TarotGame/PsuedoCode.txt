@@ -1,0 +1,50 @@
+How the app should work:
+
+1) User selects a level via buttons
+    1 - Beginner
+    2 - Intermediate
+    3 - Advanced
+
+2) After level selection: User selects how many cards are drawn via buttons
+    1 - single card reading
+    2 - 3 card reading (Past, Present, Future)
+    3 - 10 card reading (Celtic Cross)
+    4 - 13 card reading (New Years)
+
+3) App displays animation of deck being shuffled and cut.
+
+4) Visual of ## of cards being pulled from the deck.
+
+5) Shown face down in specific pattern based on step 2
+
+6) After a beat: the cards are shown flipping over to reveal the face of the card and a description
+    based on the level the user selected in step 1
+
+7) After 30 secs. an [END] button appears allowing the User to exit to the Main Menu.
+
+
+Main Menu:
+4 buttons
+
+        [Beginner] [Intermediate] [Advanced]
+
+                        [quit]              
+
+
+Reading Type Menu:
+4 buttons
+
+      [Single card]   [Past, Present, Future]
+      [     1     ]   [          3          ]
+    
+     [Celtic Cross]         [New Years]
+     [     10     ]         [    13   ]
+
+
+Shuffle Animation:
+  (Same no matter the options)
+
+Drawing the cards:
+   (Same for the same type:
+        Single Card, 3 card, 10 card, 13 card
+        )
